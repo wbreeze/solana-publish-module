@@ -1,9 +1,11 @@
-import * as web3 from '@solana/web3.js'; // callback: The function to call after the transaction is signed.
+import * as web3 from '@solana/web3.js';
+
+// callback: The function to call after the transaction is signed.
 // This closes our paywall.
 // milliLamports: The price to charge the user in "milli-lamports" (.001 SOL),
 // approximately 10 cents (for now)
 // reciever: The public key of the wallet to send payment to.
-// Should be passed as an environment variable wherever your site's deployed.
+// Should be passed as an environment variable from wherever your site's deployed.
 
 const payWithSol = (callback, milliLamports, reciever) => {
   window.solana.connect().then(function (userKey) {

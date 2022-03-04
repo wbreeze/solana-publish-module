@@ -10,6 +10,8 @@
       "@babel/preset-react"
     ]
   },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [ "dist", "README.md" ],
   "dependencies": {
     "@emotion/react": "^11.8.1",
