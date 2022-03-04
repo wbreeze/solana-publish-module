@@ -1,12 +1,12 @@
 A quick way to accept solana micropayments for your content.
 
-This package exports both a function "payWithSol" and "Paywall" component.
+This package exports both a function `payWithSol` and a `Paywall` component.
 
-The Paywall component is an mui overlay that can protect your content until a customer pays with the phantom wallet.
-Takes a "reciever" prop, the public key of the wallet to send payment to. Should be passed from an environment variable wherever your site's deployed.
+The `Paywall` component is an mui overlay that can protect your content until a customer pays with a phantom wallet.
+- `props.reciever`: The public key of the wallet to send payment to. Should be passed from an environment variable wherever your site's deployed.
 
-payWithSol() can be used independently of the react component to connect to phantom and complete a solana transaction.
+`payWithSol()` can be used independently of the react component to connect to phantom and complete a solana transaction.
 
-callback: The function to call after the transaction is signed. This closes our paywall.
-milliLamports: The price to charge the user in "milli-lamports" (.001 SOL), approximately 10 cents (for now)
-reciever: The public key of the wallet to send payment to. Should be passed from an environment variable wherever your site's deployed.
+- `callback`: The function to call after the transaction is signed. This closes our paywall.
+- `milliLamports`: The price to charge the user in "milli-lamports" (.001 SOL), approximately 10 cents (for now)
+- `reciever`: The public key of the wallet to send payment to. Should be passed from an environment variable wherever your site's deployed.
