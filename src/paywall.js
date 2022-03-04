@@ -22,4 +22,4 @@ const Paywall = function Paywall({ reciever }) {
     );
 }
 
-export { PaywallComponent };
+export { Paywall };

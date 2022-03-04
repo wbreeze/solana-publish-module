@@ -1,7 +1,8 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
 import { PaywallComponent } from './paywallComponent';
-export default function Paywall({
+
+const Paywall = function Paywall({
   reciever
 }) {
   const [state, setState] = React.useState({
@@ -23,4 +24,6 @@ export default function Paywall({
     reciever: reciever,
     toggleDrawer: toggleDrawer
   }))));
-}
+};
+
+export { Paywall };
