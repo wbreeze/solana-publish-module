@@ -2,7 +2,7 @@ import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
 import { PaywallComponent } from './paywallComponent';
 
-export default function Paywall({ reciever }) {
+const Paywall = function Paywall({ reciever }) {
     const [state, setState] = React.useState({
         bottom: true,
     });
@@ -21,3 +21,5 @@ export default function Paywall({ reciever }) {
         </div>
     );
 }
+
+export { PaywallComponent };
