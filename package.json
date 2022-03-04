@@ -1,0 +1,16 @@
+{
+    "name": "solana-publish",
+    "private": true,
+    "description": "Some simple paywall tools using solana and Phantom wallet",
+    "version": "0.1.0",
+    "author": "Kathryn Lovell",
+    "dependencies": {
+      "@emotion/react": "^11.8.1",
+      "@emotion/styled": "^11.8.1",
+      "@mui/material": "^5.4.2",
+      "@solana/web3.js": "^1.35.1",
+      "react": "^16.9.0",
+      "react-dom": "^16.9.0"
+    }
+}
+  
