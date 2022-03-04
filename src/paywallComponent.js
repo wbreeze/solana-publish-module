@@ -1,5 +1,5 @@
 import React from 'react';
-import payWithSol from './payWithSol';
+import { payWithSol } from './payWithSol';
 import { Button } from '@mui/material';
 
 const PaywallComponent = ({ reciever, toggleDrawer }) => {
