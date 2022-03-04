@@ -1,46 +1,23 @@
-import React from 'react';
-import payWithSol from './payWithSol';
-import { Button } from '@mui/material';
+import * as React from 'react';
+import Drawer from '@mui/material/Drawer';
+import { PaywallComponent } from './paywallComponent';
 
-const Paywall = (props) => {
+export default function Paywall({ reciever }) {
+    const [state, setState] = React.useState({
+        bottom: true,
+    });
+
+    const toggleDrawer = (open) => {
+        setState({ ...state, ['bottom']: open });
+    };
+
     return (
-        <div
-            style={{
-                display: `flex`,
-                boxShadow: `0px 0px 20px 0px`,
-                background: `rgb(16, 6, 69)`,
-            }}
-        >
-            <div
-                style={{
-                    display: `flex`,
-                    flex: `1 1 60vw`,
-                    flexDirection: `column`,
-                    justifyContent: `space-around`,
-                    padding: `1em`,
-                    textAlign: `center`,
-                }}
-            >
-                <h3>
-                    You can use your Phantom wallet to view this article!
-          {` `}
-                </h3>
-                <p></p>
-                <p>
-                    <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={() => {
-                            payWithSol(props.toggleDrawer, 1, process.env.GATSBY_PUBLISHER_URL);
-                        }}
-                    >
-                        Buy with Phantom Wallet
-          </Button>
-                </p>
-                <a href="/">Back to Overview</a>
-            </div>
+        <div>
+            <React.Fragment key={'bottom'}>
+                <Drawer anchor={'bottom'} open={state['bottom']}>
+                    <PaywallComponent reciever={reciever} toggleDrawer={toggleDrawer} />
+                </Drawer>
+            </React.Fragment>
         </div>
     );
-};
-
-export { Paywall };
+}
