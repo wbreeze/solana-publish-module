@@ -2,7 +2,7 @@
   "name": "solana-publish",
   "private": true,
   "description": "Some simple paywall tools using solana and Phantom wallet",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Kathryn Lovell",
   "type": "module",
   "babel": {
