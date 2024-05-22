@@ -10,7 +10,7 @@ import * as web3 from '@solana/web3.js';
 const payWithSol = (callback, milliLamports, reciever) => {
   window.solana.connect().then(function (userKey) {
     // Connect to cluster
-    var connection = new web3.Connection(web3.clusterApiUrl('devnet'), 'confirmed');
+    var connection = new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
 
     var web3userKey = new web3.PublicKey(userKey.publicKey);
     var web3reciever = new web3.PublicKey(reciever);
