@@ -2,7 +2,7 @@
   "name": "solana-publish",
   "private": true,
   "description": "Some simple paywall tools using solana and Phantom wallet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Kathryn Lovell",
   "type": "module",
   "babel": {
@@ -17,10 +17,7 @@
     "README.md"
   ],
   "dependencies": {
-    "@mui/material": "^5.4.2",
-    "@solana/web3.js": "^1.35.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "@solana/web3.js": "^1.35.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
