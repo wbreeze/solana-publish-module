@@ -4,7 +4,6 @@
   "description": "Some simple paywall tools using solana and Phantom wallet",
   "version": "1.0.1",
   "author": "Kathryn Lovell",
-  "type": "module",
   "babel": {
     "presets": [
       "@babel/preset-env"
