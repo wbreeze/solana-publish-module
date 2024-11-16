@@ -22,24 +22,17 @@ function createSolanaConnection(_x, _x2) {
 }
 function _createSolanaConnection() {
   _createSolanaConnection = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(rpcProvider, apiToken) {
-    var connection;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           if (!rpcProvider) {
-            _context.next = 6;
+            _context.next = 4;
             break;
           }
-          connection = new web3.Connection(rpcProvider, 'confirmed'); // Add API token to headers if available
-          if (apiToken) {
-            connection.onHeaders(function (headers) {
-              headers['X-API-Token'] = apiToken;
-            });
-          }
-          return _context.abrupt("return", connection);
-        case 6:
+          return _context.abrupt("return", new web3.Connection(rpcProvider, 'confirmed'));
+        case 4:
           return _context.abrupt("return", new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed'));
-        case 7:
+        case 5:
         case "end":
           return _context.stop();
       }
