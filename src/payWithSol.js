@@ -1,4 +1,7 @@
 import * as web3 from '@solana/web3.js';
+import * as buffer from "buffer";
+window.Buffer = buffer.Buffer;
+
 
 // callback: The function to call after the transaction is signed.
 // This closes our paywall.
@@ -7,25 +10,23 @@ import * as web3 from '@solana/web3.js';
 // reciever: The public key of the wallet to send payment to.
 // Should be passed as an environment variable wherever your site's deployed.
 
-async function createSolanaConnection(rpcProvider) {
-  if (rpcProvider) {
-    return new web3.Connection(rpcProvider, 'confirmed');
-  }
-  else {
-    return new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
-  }
-}
-
 const payWithSol = (callback, milliLamports, reciever, rpcProvider) => {
   window.solana.connect().then(function (userKey) {
     // Connect to cluster
-    var connection = createSolanaConnection(rpcProvider);
+    var connection = () => {
+        if (rpcProvider) {
+            return new web3.Connection(rpcProvider, 'confirmed');
+        }
+        else {
+            return new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
+        }
+    }
 
     var web3userKey = new web3.PublicKey(userKey.publicKey);
     var web3reciever = new web3.PublicKey(reciever);
 
     // Add transfer instruction to transaction
-    connection.getLatestBlockhash().then((blockhashObj) => {
+    connection().getLatestBlockhash('finalized').then((blockhashObj) => {
       var transaction = new web3.Transaction({
         recentBlockhash: blockhashObj.blockhash,
         feePayer: web3userKey,
