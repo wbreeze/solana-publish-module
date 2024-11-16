@@ -17,11 +17,11 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 // approximately 10 cents (for now)
 // reciever: The public key of the wallet to send payment to.
 // Should be passed as an environment variable wherever your site's deployed.
-function createSolanaConnection(_x, _x2) {
+function createSolanaConnection(_x) {
   return _createSolanaConnection.apply(this, arguments);
 }
 function _createSolanaConnection() {
-  _createSolanaConnection = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(rpcProvider, apiToken) {
+  _createSolanaConnection = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(rpcProvider) {
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -40,10 +40,10 @@ function _createSolanaConnection() {
   }));
   return _createSolanaConnection.apply(this, arguments);
 }
-var payWithSol = exports.payWithSol = function payWithSol(callback, milliLamports, reciever, rpcProvider, apiToken) {
+var payWithSol = exports.payWithSol = function payWithSol(callback, milliLamports, reciever, rpcProvider) {
   window.solana.connect().then(function (userKey) {
     // Connect to cluster
-    var connection = createSolanaConnection(rpcProvider, apiToken);
+    var connection = createSolanaConnection(rpcProvider);
     var web3userKey = new web3.PublicKey(userKey.publicKey);
     var web3reciever = new web3.PublicKey(reciever);
 
