@@ -1,4 +1,4 @@
-A quick way to accept solana micropayments for your content.
+A quick way to accept solana payments for your content.
 
 `payWithSol()` can be used to connect to phantom and complete a solana transaction.
 
