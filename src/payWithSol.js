@@ -49,6 +49,9 @@ const payWithSol = (callback, milliLamports, reciever, rpcProvider, apiToken) =>
       window.solana.signAndSendTransaction(transaction).then((res) => {
         callback();
       });
+    },
+    (e) => {
+      console.error(e);
     });
   });
 };
