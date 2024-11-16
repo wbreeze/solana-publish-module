@@ -7,10 +7,27 @@ import * as web3 from '@solana/web3.js';
 // reciever: The public key of the wallet to send payment to.
 // Should be passed as an environment variable wherever your site's deployed.
 
-const payWithSol = (callback, milliLamports, reciever) => {
+async function createSolanaConnection(rpcProvider, apiToken) {
+  if (rpcProvider) {
+    const connection = new web3.Connection(rpcProvider, 'confirmed');
+    
+    // Add API token to headers if available
+    if (apiToken) {
+      connection.onHeaders((headers) => {
+        headers['X-API-Token'] = apiToken;
+      });
+    }
+    return connection;
+  }
+  else {
+    return new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
+  }
+}
+
+const payWithSol = (callback, milliLamports, reciever, rpcProvider, apiToken) => {
   window.solana.connect().then(function (userKey) {
     // Connect to cluster
-    var connection = new web3.Connection(web3.clusterApiUrl('mainnet-beta'), 'confirmed');
+    var connection = createSolanaConnection(rpcProvider, apiToken);
 
     var web3userKey = new web3.PublicKey(userKey.publicKey);
     var web3reciever = new web3.PublicKey(reciever);
