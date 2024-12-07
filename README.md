@@ -1,4 +1,35 @@
+# payWithSol
+
 A quick way to accept solana payments for your content.
+
+## Development usage
+
+Build this library using the [`yarn` package manager](https://yarnpkg.com/).
+
+### Clone the project:
+
+```
+git clone git@github.com:UuqV/solana-publish-module.git
+```
+
+### Install dependencies:
+
+```
+cd solana-publish-module
+yarn install
+```
+
+### Build the library
+
+```
+yarn build
+```
+
+Find the library file as `dist/payWithSol.js`. You can copy this file to
+your project. The file, `dist/index.js` contains one example for including
+the library in your project.
+
+## Library usage
 
 `payWithSol()` can be used to connect to phantom and complete a solana transaction.
 
