@@ -36,6 +36,7 @@ and using [npm][npm] with [Webpack][wp]:
 
 [soi]: https://stackoverflow.com/a/38417065
 [wp]: https://webpack.js.org/
+[npm]: https://www.npmjs.com/
 
 ```
 cd <your project>
